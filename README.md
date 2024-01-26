@@ -1,4 +1,4 @@
-#Proyecto Navigation en react Native
+# Proyecto Navigation en react Native
 
 1. Para instalar dependencias
 ``
