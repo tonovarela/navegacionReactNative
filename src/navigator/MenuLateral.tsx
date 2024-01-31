@@ -2,14 +2,19 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { StackNavitagor } from './StackNavitagor';
-import { Page1Screen, Page2Screen, Page3Screen, PersonaScreen, SettingsScreen } from '../screens';
+import {  Page2Screen, Page3Screen,  SettingsScreen } from '../screens';
+import { useWindowDimensions } from 'react-native';
 
 const Drawer = createDrawerNavigator();
 export const MenuLateral = () => {
+  const  {width} = useWindowDimensions();
+    
   return (
     <Drawer.Navigator
+    
     screenOptions={
-      {       
+      {      
+        drawerType:   width >= 768 ? 'permanent' : 'front',
         headerShown:true,
         headerStyle: {
           elevation: 0,
