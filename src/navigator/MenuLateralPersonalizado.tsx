@@ -2,10 +2,12 @@
 import React from 'react';
 import { DrawerContentComponentProps, DrawerContentScrollView, createDrawerNavigator } from '@react-navigation/drawer';
 import { Image, View, useWindowDimensions, TouchableOpacity, Text } from 'react-native';
-import { StackNavitagor } from './StackNavitagor';
+// import { StackNavitagor } from './StackNavitagor';
+// import { createStackNavigator } from '@react-navigation/stack';
 import { SettingsScreen } from '../screens';
 import { styles } from '../theme/appTheme';
-import { createStackNavigator } from '@react-navigation/stack';
+
+import { Tabs } from './Tabs';
 
 const Drawer = createDrawerNavigator();
 
@@ -27,7 +29,12 @@ export const MenuLateralPersonalizado = () => {
         }
       }
     >
-      <Drawer.Screen name="StackNavigator" component={StackNavitagor} />
+      <Drawer.Screen name="Tabs" options={
+        {
+          title: "App Varela",
+          
+        }
+      } component={Tabs} />
       <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
     </Drawer.Navigator>
   )
@@ -47,7 +54,7 @@ const MenuInterno = ({ navigation }: DrawerContentComponentProps) => {
       { /*   Opciones de menu */}
       <View style={styles.menuContainer}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('StackNavigator')}
+          onPress={() => navigation.navigate('Tabs')}
           style={styles.menuBtn}>
           <Text style={styles.menuText} >Navegacion</Text>
         </TouchableOpacity>

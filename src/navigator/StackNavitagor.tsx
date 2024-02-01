@@ -2,30 +2,27 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Page1Screen, Page2Screen, Page3Screen, PersonaScreen } from '../screens';
 
-
-
 export type RootStackParams = {
   Page1Screen:undefined,
   Page2Screen:undefined,
   Page3Screen:undefined,
   PersonaScreen:{id:number,nombre:string}
 };
+
+
 const Stack = createStackNavigator<RootStackParams>()
-
-
 export const StackNavitagor = () => {
   return (
-    <Stack.Navigator
+    <Stack.Navigator    
       screenOptions={
-        {
-          cardStyle: { backgroundColor: '#fff' },
+        {        
+          cardStyle: { backgroundColor: '#fff' },          
           headerShown:false,
           headerStyle: {
             elevation: 0,
             shadowColor: 'transparent'
           },
         }
-
       }
     >
       <Stack.Screen name="Page1Screen" options={{ title: "Pagina 1" }} component={Page1Screen} />
