@@ -6,9 +6,10 @@ import { StackNavitagor } from './StackNavitagor';
 
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { Platform } from 'react-native';
+import { Platform, Text } from 'react-native';
 import { colores } from '../theme/appTheme';
 import { TopTab } from './TopTab';
+import  Icon from'react-native-vector-icons/Ionicons';
 
 
 const TabsMaterial = () => {
@@ -21,17 +22,36 @@ const TabsMaterial = () => {
         >
             <TabMaterial.Screen
                 name="Tab1Screen"
-                options={{ title: 'Tab1' }}
+                options={{ title: 'Tab1',
+                tabBarIcon: ({ focused, color }) => {
+                    return <Text>
+                        <Icon name='apps-outline' size={20} color={color}></Icon>
+                    </Text>
+                }
+            }}
+
                 component={Tab1Screen}
             />
             <TabMaterial.Screen
                 name="Tab2Screen"
-                options={{ title: 'Tab2' }}
+                options={{ title: 'Tab2',
+                tabBarIcon: ({ focused, color }) => {
+                    return <Text>
+                        <Icon name='albums-outline' size={20} color={color}></Icon>
+                    </Text>
+                }
+             }}
                 component={TopTab}
             />
             <TabMaterial.Screen
                 name="StackNavigator"
-                options={{ title: 'StackNavigator' }}
+                options={{ title: 'StackNavigator',
+                tabBarIcon: ({ focused, color }) => {
+                    return <Text>
+                        <Icon name='aperture-outline' size={20} color={color}></Icon>
+                    </Text>
+                }
+             }}
                 component={StackNavitagor}
             />
         </TabMaterial.Navigator>

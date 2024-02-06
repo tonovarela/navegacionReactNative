@@ -14,6 +14,13 @@ export const styles = StyleSheet.create({
         marginBottom: 10
 
     },
+    itemMenu:{
+        flexDirection: 'row',
+        alignItems:'center' 
+    },
+    iconMenu:{
+        marginRight:10
+    },
     botonGrande: {
         width: 100,
         height: 100,

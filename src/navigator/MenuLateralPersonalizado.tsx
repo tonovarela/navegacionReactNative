@@ -5,9 +5,10 @@ import { Image, View, useWindowDimensions, TouchableOpacity, Text } from 'react-
 // import { StackNavitagor } from './StackNavitagor';
 // import { createStackNavigator } from '@react-navigation/stack';
 import { SettingsScreen } from '../screens';
-import { styles } from '../theme/appTheme';
+import { styles, colores } from '../theme/appTheme';
 
 import { Tabs } from './Tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Drawer = createDrawerNavigator();
 
@@ -20,9 +21,9 @@ export const MenuLateralPersonalizado = () => {
       drawerContent={(props) => <MenuInterno {...props} />}
       screenOptions={
         {
-          
+
           drawerType: width >= 768 ? 'permanent' : 'front',
-          headerShown: false,
+          headerShown: true,
           headerStyle: {
             elevation: 0,
             shadowColor: 'transparent'
@@ -32,12 +33,11 @@ export const MenuLateralPersonalizado = () => {
     >
       <Drawer.Screen name="Tabs" options={
         {
-          
-          title: "App Varela",
-          //headerShown: true,          
+          headerShown: false
+                   
         }
       } component={Tabs} />
-      <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
+      <Drawer.Screen name="SettingsScreen"  options={{title:'Settings'}} component={SettingsScreen} />
     </Drawer.Navigator>
   )
 }
@@ -58,12 +58,20 @@ const MenuInterno = ({ navigation }: DrawerContentComponentProps) => {
         <TouchableOpacity
           onPress={() => navigation.navigate('Tabs')}
           style={styles.menuBtn}>
-          <Text style={styles.menuText} >Navegacion</Text>
+          <View style={styles.itemMenu}>
+            <Icon name="compass" size={15} style={styles.iconMenu} color={colores.primary} />
+            <Text style={styles.menuText} >Navegacion</Text>
+          </View>
+
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => navigation.navigate('SettingsScreen')}
           style={styles.menuBtn}>
-          <Text style={styles.menuText}>Ajustes</Text>
+          <View style={styles.itemMenu}>
+            <Icon name="build" size={15} style={styles.iconMenu} color={colores.primary} />
+            <Text style={styles.menuText}>Ajustes</Text>
+          </View>
+
         </TouchableOpacity>
       </View>
     </DrawerContentScrollView>
