@@ -6,6 +6,9 @@ import  Icon from'react-native-vector-icons/Ionicons';
 interface Props extends StackScreenProps<any, any> { }
 
 export const Page1Screen = ({ navigation }: Props) => {
+  
+
+  
 
   return (
     <View style={styles.globalMargin}>
