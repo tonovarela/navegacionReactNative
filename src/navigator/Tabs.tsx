@@ -8,6 +8,8 @@ import { StackNavitagor } from './StackNavitagor';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { Platform } from 'react-native';
 import { colores } from '../theme/appTheme';
+import { TopTab } from './TopTab';
+
 
 const TabsMaterial = () => {
     const TabMaterial = createMaterialBottomTabNavigator<TabScreenList>();
@@ -25,7 +27,7 @@ const TabsMaterial = () => {
             <TabMaterial.Screen
                 name="Tab2Screen"
                 options={{ title: 'Tab2' }}
-                component={Tab2Screen}
+                component={TopTab}
             />
             <TabMaterial.Screen
                 name="StackNavigator"
@@ -36,7 +38,7 @@ const TabsMaterial = () => {
     )
 }
 
-const TabsCupertino = () => {
+const TabsCupertino = () => {    
     const TabCupertino = createBottomTabNavigator<TabScreenList>();
     return (
         <TabCupertino.Navigator
@@ -54,7 +56,7 @@ const TabsCupertino = () => {
             <TabCupertino.Screen
                 name="Tab2Screen"
                 options={{ title: 'Tab2' }}
-                component={Tab2Screen}
+                component={TopTab}
             />
             <TabCupertino.Screen
                 name="StackNavigator"
@@ -67,5 +69,5 @@ const TabsCupertino = () => {
 
 
 export const Tabs = () => {
-    return Platform.OS !== 'ios' ? TabsCupertino() : TabsMaterial();
+    return Platform.OS === 'ios' ? TabsCupertino() : TabsMaterial();
 };

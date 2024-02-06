@@ -17,7 +17,7 @@ export const StackNavitagor = () => {
       screenOptions={
         {        
           cardStyle: { backgroundColor: '#fff' },          
-          headerShown:false,
+          headerShown:true,          
           headerStyle: {
             elevation: 0,
             shadowColor: 'transparent'

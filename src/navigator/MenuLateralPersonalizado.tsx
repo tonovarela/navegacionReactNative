@@ -20,8 +20,9 @@ export const MenuLateralPersonalizado = () => {
       drawerContent={(props) => <MenuInterno {...props} />}
       screenOptions={
         {
+          
           drawerType: width >= 768 ? 'permanent' : 'front',
-          headerShown: true,
+          headerShown: false,
           headerStyle: {
             elevation: 0,
             shadowColor: 'transparent'
@@ -31,8 +32,9 @@ export const MenuLateralPersonalizado = () => {
     >
       <Drawer.Screen name="Tabs" options={
         {
-          title: "App Varela",
           
+          title: "App Varela",
+          //headerShown: true,          
         }
       } component={Tabs} />
       <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
